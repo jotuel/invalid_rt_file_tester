@@ -8,13 +8,13 @@ cd invalid_rt_file_tester
 RIGHT="✅"
 WRONG="❌"
 
-function run(){ 
+function run(){
 
 	echo "Test no arg:" >> test.log
 	echo "Test no arg:" >> kill.log
-	./../miniRT >> test.log 2>&1 &
+	./../minirt >> test.log 2>&1 &
 	sleep 0.05
-	PID=$(ps -ef | grep "miniRT" | grep -v 'grep' | awk '{print $2}')
+	PID=$(ps -ef | grep "minirt" | grep -v 'grep' | awk '{print $2}')
 	echo -n "Test no arg:"
 	if [ $PID ]
 	then
@@ -29,9 +29,9 @@ function run(){
 
 	echo "Test non-exist0:" >> test.log
 	echo "Test non-exist0:" >> kill.log
-	./../miniRT srcs/error.rt >> test.log 2>&1 &
+	./../minirt srcs/error.rt >> test.log 2>&1 &
 	sleep 0.05
-	PID=$(ps -ef | grep "miniRT" | grep -v 'grep' | awk '{print $2}')
+	PID=$(ps -ef | grep "minirt" | grep -v 'grep' | awk '{print $2}')
 	echo -n "Test non-exist0:"
 	if [ $PID ]
 	then
@@ -45,9 +45,9 @@ function run(){
 
 	echo "Test non-exist1:" >> test.log
 	echo "Test non-exist1:" >> kill.log
-	./../miniRT srcs/error >> test.log 2>&1 &
+	./../minirt srcs/error >> test.log 2>&1 &
 	sleep 0.05
-	PID=$(ps -ef | grep "miniRT" | grep -v 'grep' | awk '{print $2}')
+	PID=$(ps -ef | grep "minirt" | grep -v 'grep' | awk '{print $2}')
 	echo -n "Test non-exist1:"
 	if [ $PID ]
 	then
@@ -61,9 +61,9 @@ function run(){
 
 	echo "Test multi-arg0:" >> test.log
 	echo "Test multi-arg0:" >> kill.log
-	./../miniRT srcs/objects.rt srcs/objects.rt >> test.log 2>&1 &
+	./../minirt srcs/objects.rt srcs/objects.rt >> test.log 2>&1 &
 	sleep 0.05
-	PID=$(ps -ef | grep "miniRT" | grep -v 'grep' | awk '{print $2}')
+	PID=$(ps -ef | grep "minirt" | grep -v 'grep' | awk '{print $2}')
 	echo -n "Test multi-arg0:"
 	if [ $PID ]
 	then
@@ -77,9 +77,9 @@ function run(){
 
 	echo "Test multi-arg1:" >> test.log
 	echo "Test multi-arg1:" >> kill.log
-	./../miniRT srcs/objects.rt srcs/objects.rt srcs/objects.rt >> test.log 2>&1 &
+	./../minirt srcs/objects.rt srcs/objects.rt srcs/objects.rt >> test.log 2>&1 &
 	sleep 0.05
-	PID=$(ps -ef | grep "miniRT" | grep -v 'grep' | awk '{print $2}')
+	PID=$(ps -ef | grep "minirt" | grep -v 'grep' | awk '{print $2}')
 	echo -n "Test multi-arg1:"
 	if [ $PID ]
 	then
@@ -94,9 +94,9 @@ function run(){
 	echo '' >> test.log
 	echo "Test .cube:" >> test.log
 	echo "Test .cube:" >> kill.log
-	./../miniRT srcs/0.cube >> test.log 2>&1 &
+	./../minirt srcs/0.cube >> test.log 2>&1 &
 	sleep 0.05
-	PID=$(ps -ef | grep "miniRT" | grep -v 'grep' | awk '{print $2}')
+	PID=$(ps -ef | grep "minirt" | grep -v 'grep' | awk '{print $2}')
 	echo -n "Test .cube:"
 	if [ $PID ]
 	then
@@ -118,9 +118,9 @@ function run(){
 		echo '' >> test.log
 		echo "Test $i:" >> test.log
 		echo "Test $i:" >> kill.log
-		./../miniRT srcs/$i.rt >> test.log 2>&1 &
+		./../minirt srcs/$i.rt >> test.log 2>&1 &
 		sleep 0.05
-		PID=$(ps -ef | grep "miniRT" | grep -v 'grep' | awk '{print $2}')
+		PID=$(ps -ef | grep "minirt" | grep -v 'grep' | awk '{print $2}')
 		echo -ne " $i:"
 		if [ $PID ]; then
 			kill $PID 1>&2
