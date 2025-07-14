@@ -4,7 +4,7 @@
 go to your minirt repo
 and clone the repository at the root of your minirt without giving it a different name
 ```
-git clone https://github.com/lienardale/invalid_rt_file_tester.git && cd invalid_rt_file_tester
+git clone https://github.com/jotuel/invalid_rt_file_tester.git && cd invalid_rt_file_tester
 ```
 ```
 bash invalid_rt.sh
