@@ -9,7 +9,8 @@ git clone https://github.com/lienardale/invalid_rt_file_tester.git && cd invalid
 ```
 bash invalid_rt.sh
 ```
-
+>[!IMPORTANT]
+>this is mostly just a regex modified version to match the current .rt file
 
 ## leaks
 'bash leaks_invalid_rt.sh'
